@@ -93,7 +93,7 @@ export default function Home() {
 
                   <Box>
                     <b>Visit Us</b><br />
-                    <Link color={Colors.white} component={NextLink} href={"tel:+goo.gl/maps/6tNDNvLRrgVAR2z27"} target="_blank" rel="noopener">8701 NW 13th Terrace<br />Doral, FL 33172</Link><br />
+                    <Link color={Colors.white} component={NextLink} href={"https://goo.gl/maps/6tNDNvLRrgVAR2z27"} target="_blank" rel="noopener">8701 NW 13th Terrace<br />Doral, FL 33172</Link><br />
                   </Box>
                 </Stack>
               </Typography>
