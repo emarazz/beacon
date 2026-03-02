@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# images
+/public/img/
+
+# firebase
+firebase-debug.log
+.firebaserc
+/.firebase/
+firebase.json
