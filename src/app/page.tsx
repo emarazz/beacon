@@ -1,10 +1,7 @@
 import { Box, Container, IconButton, Link, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import NextLink from "next/link";
-
-import InstagramIcon from '@mui/icons-material/Instagram';
 import { Colors } from "@/ui/colors";
-import { WhatsApp } from "@mui/icons-material";
 import { visuallyHidden } from "@mui/utils";
 
 
@@ -47,8 +44,8 @@ export default function Home() {
           <Image
             src="/img/beacon-napa-01.webp"
             alt="Beacon Auto Care - NAPA AutoCare Center"
-            width={480}
-            height={144}
+            width={360}
+            height={108}
             style={{
               objectFit: "contain",
             }}
