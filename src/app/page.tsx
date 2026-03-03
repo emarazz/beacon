@@ -39,7 +39,7 @@ export default function Home() {
         }}
       />
 
-      <Container maxWidth="sm" sx={{ display: "flex", flexDirection: "column", alignItems: "center", paddingY: 4 }}>
+      <Container maxWidth="sm" sx={{ display: "flex", flexDirection: "column", alignItems: "center", paddingY: 2 }}>
         <Stack alignItems="center" >
           <Image
             src="/img/beacon-napa-01.webp"
@@ -95,6 +95,12 @@ export default function Home() {
                 </Stack>
               </Typography>
             </Stack>
+
+            <br />
+
+            <Typography color={Colors.white} variant="subtitle1">
+              Copyright © 2026 Beacon Auto Care by AUTOBO LLC
+            </Typography>
           </Box>
         </Box>
 
