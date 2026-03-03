@@ -99,7 +99,7 @@ export default function Home() {
             <br />
 
             <Typography color={Colors.white} variant="subtitle1">
-              Copyright © 2026 Beacon Auto Care by AUTOBO LLC
+              {`Copyright © ${(new Date()).getFullYear()} Beacon Auto Care by AUTOBO LLC`}
             </Typography>
           </Box>
         </Box>
