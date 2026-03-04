@@ -7,6 +7,7 @@ import { CssBaseline } from '@mui/material';
 import theme from '../../theme';
 import '../../globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Footer from '@/ui/Footer';
 
 export const metadata: Metadata = {
   title: "Beacon Auto Care - NAPA AutoCare Center",
@@ -44,6 +45,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <ThemeProvider theme={theme}>
             <CssBaseline />
             {children}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
 

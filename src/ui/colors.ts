@@ -5,7 +5,10 @@ export enum Colors {
   yellow = "#FFC836", // in a customization, this should be replaced everywhere (secondary)
   white = "#FFFFFF",
   black = "#000000",
-  gray = "#DADAD9",
+  gray = "#F4F4F4",
+
+  // gray = "#DADAD9",
+
 
   // purple = "#6B00FC",
   // turquoise = "#47E8DD",

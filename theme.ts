@@ -101,6 +101,9 @@ let theme = createTheme({
     secondary: {
       main: Colors.yellow,
     },
+    background: {
+      default: Colors.gray
+    }
   },
 
   components: {
@@ -118,6 +121,13 @@ let theme = createTheme({
       },
     },
     MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiPaper: {
       styleOverrides: {
         root: {
           borderRadius: 0,

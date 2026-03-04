@@ -22,7 +22,6 @@ export default function FeaturedServices() {
       display="grid"
       gridTemplateColumns={{ xs: "1fr", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(5, 1fr)" }}
       gap={4}
-      py={8}
     >
       {services.map((service) => (
         <Box key={service.id} display="flex" flexDirection="column" gap={2} alignItems="center">
