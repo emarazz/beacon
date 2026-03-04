@@ -20,13 +20,13 @@ let theme = createTheme({
     //   lineHeight: 1.1,
     //   letterSpacing: "normal",
     // },
-    // h2: {
-    //   fontFamily: 'var(--font-lato)',
-    //   fontSize: '1.75rem',
-    //   fontWeight: 300,
-    //   lineHeight: 1.1,
-    //   letterSpacing: "normal",
-    // },
+    h2: {
+      fontFamily: 'var(--font-rubi)',
+      fontSize: '1.75rem',
+      fontWeight: 300,
+      lineHeight: 1.1,
+      letterSpacing: "normal",
+    },
     // h3: {
     //   fontFamily: 'var(--font-lato)',
     //   fontSize: '1.25rem',
@@ -101,12 +101,14 @@ let theme = createTheme({
     secondary: {
       main: Colors.yellow,
     },
-    background: {
-      default: Colors.black,
-    }
   },
 
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        b { font-weight: 500; }
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -127,6 +129,18 @@ let theme = createTheme({
         root: {
           paddingTop: 8,
           '&:last-child': { paddingBottom: 8 }
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          textUnderlineOffset: '4px',
+          textDecorationThickness: '2px',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
         },
       },
     },

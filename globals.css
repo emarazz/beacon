@@ -6,6 +6,7 @@ body {
   margin: 0;
 }
 
+
 /* h2,
 h3,
 h4,
@@ -15,7 +16,7 @@ h6 {
 } */
 
 
-html {
+/* html {
   scroll-padding: 112px;
   scroll-behavior: smooth !important;
-}
+} */
