@@ -7,7 +7,7 @@ export enum Colors {
   black = "#000000",
   gray = "#F4F4F4",
 
-  // gray = "#DADAD9",
+  darkGray = "#D2D2D2",
 
 
   // purple = "#6B00FC",

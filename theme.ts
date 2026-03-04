@@ -142,6 +142,13 @@ let theme = createTheme({
         },
       },
     },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: Colors.darkGray,
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {

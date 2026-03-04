@@ -72,7 +72,7 @@ export default function HomePage() {
             <b>FEATURED</b> SERVICES
           </Typography>
 
-          <Divider sx={{ mt: 0.5 }} />
+          <Divider sx={{ mt: 0.25 }} />
         </Box>
 
         <FeaturedServices />
@@ -101,7 +101,7 @@ export default function HomePage() {
               <b>BEACON</b> AUTO CARE
             </Typography>
 
-            <Divider sx={{ mt: 0.5 }} />
+            <Divider sx={{ mt: 0.25 }} />
           </Box>
 
           <Typography>
@@ -126,7 +126,7 @@ export default function HomePage() {
               <b>VISIT</b> US
             </Typography>
 
-            <Divider sx={{ mt: 0.5 }} />
+            <Divider sx={{ mt: 0.25 }} />
           </Box>
 
           <Box

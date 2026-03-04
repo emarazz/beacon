@@ -14,8 +14,8 @@ const services = [
   { title: "OIL ENGINE", id: "oil-engine", src: "/img/services/oil-engine.webp", alt: "Oil engine" },
   { title: "BRAKE SYSTEM", id: "brake-system", src: "/img/services/brake-system.webp", alt: "Brake system" },
   { title: "MAINTENANCE", id: "maintenance", src: "/img/services/maintenance.webp", alt: "Maintenance" },
-
 ]
+
 export default function FeaturedServices() {
   return (
     <Box

@@ -40,8 +40,8 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
 
   const bg = isDark ? "transparent" : Colors.white
   const textColor = isDark ? Colors.white : Colors.black
-  const iconColor = isDark ? Colors.yellow : Colors.black
-  const dividerColor = isDark ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)"
+  const iconColor = Colors.yellow
+  const dividerColor = Colors.darkGray
 
   return (
     <Box
@@ -66,7 +66,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
           <Box display="flex" justifyContent={{ xs: "center", sm: "flex-start" }}>
             <NextLink href="/">
               <Image
-                src="/img/beacon-napa-01.webp"
+                src={isDark ? "/img/beacon-napa-01.webp" : "/img/beacon-napa-02.webp"}
                 alt="Beacon Auto Care - NAPA AutoCare Center"
                 width={250}
                 height={75}
@@ -187,7 +187,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
         {/* Mobile */}
         <Box sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column", gap: 2 }}>
 
-          {/* Logo + Hamburger */}
+          {/* Hamburger */}
           <Box
             sx={{
               display: "grid",
