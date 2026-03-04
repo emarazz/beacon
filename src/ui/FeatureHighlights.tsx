@@ -31,6 +31,9 @@ export default function FeatureHighlights() {
       slides: { perView: 1, spacing: 16 },
       breakpoints: {
         "(min-width: 600px)": {
+          slides: { perView: 2, spacing: 16 },
+        },
+        "(min-width: 900px)": {
           slides: { perView: 3, spacing: 16 },
         },
         "(min-width: 1200px)": {
