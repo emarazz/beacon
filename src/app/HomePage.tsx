@@ -3,6 +3,7 @@ import Image from "next/image"
 import PromoSlider from "@/ui/PromoSlider"
 import Navbar from "@/ui/Navbar"
 import FeaturedServices from "@/ui/FeaturedServices"
+import FeatureHighlights from "@/ui/FeatureHighlights"
 
 export default function HomePage() {
   return (
@@ -52,11 +53,9 @@ export default function HomePage() {
       </Box>
 
       {/* ─── Feature Highlights ───────────────────────────────────── */}
-      <Box component="section">
-        <Container>
-          {/* 4 image tiles */}
-        </Container>
-      </Box>
+      <Container component="section" sx={{ py: 10 }}>
+        <FeatureHighlights />
+      </Container>
 
       {/* ─── Featured Services ────────────────────────────────────── */}
       <Container
@@ -64,7 +63,7 @@ export default function HomePage() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 8,
+          gap: 6,
           paddingBottom: 16,
         }}
       >
@@ -73,7 +72,7 @@ export default function HomePage() {
             <b>FEATURED</b> SERVICES
           </Typography>
 
-          <Divider />
+          <Divider sx={{ mt: 0.5 }} />
         </Box>
 
         <FeaturedServices />
@@ -102,7 +101,7 @@ export default function HomePage() {
               <b>BEACON</b> AUTO CARE
             </Typography>
 
-            <Divider />
+            <Divider sx={{ mt: 0.5 }} />
           </Box>
 
           <Typography>
@@ -127,7 +126,7 @@ export default function HomePage() {
               <b>VISIT</b> US
             </Typography>
 
-            <Divider />
+            <Divider sx={{ mt: 0.5 }} />
           </Box>
 
           <Box
