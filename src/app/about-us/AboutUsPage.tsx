@@ -13,7 +13,7 @@ export default function AboutUsPage() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: 4,
+            gap: 2,
             paddingTop: 6,
             paddingBottom: 16,
           }}

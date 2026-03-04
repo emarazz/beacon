@@ -127,7 +127,7 @@ export default function ServicesPage() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: 6,
+            gap: 4,
             paddingBottom: 16,
           }}
         >

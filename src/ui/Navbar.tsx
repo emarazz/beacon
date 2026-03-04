@@ -196,7 +196,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
               justifyContent: "flex-start",
             }}
           >
-            <IconButton onClick={() => setDrawerOpen((prev) => !prev)} sx={{ color: iconColor }}>
+            <IconButton onClick={() => setDrawerOpen((prev) => !prev)} sx={{ color: isDark ? Colors.white : Colors.blue }}>
               {drawerOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
           </Box>
