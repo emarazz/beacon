@@ -12,12 +12,7 @@ export default function CookiePreferencesLink() {
   return (
     <Link
       onClick={handleClick}
-      sx={{
-        color: "rgba(255,255,255,0.5)",
-        cursor: "pointer",
-        typography: "body2",
-        "&:hover": { color: Colors.yellow },
-      }}
+      sx={{ color: Colors.white, typography: "body2", "&:hover": { color: Colors.yellow } }}
     >
       Cookie Preferences
     </Link>

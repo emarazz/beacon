@@ -115,7 +115,16 @@ export default function Footer() {
           <Typography variant="body2">
             Copyright © {new Date().getFullYear()} Beacon Auto Care by AUTOBO LLC
           </Typography>
-          <CookiePreferencesLink />
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Link
+              component={NextLink}
+              href="/privacy-policy"
+              sx={{ color: Colors.white, typography: "body2", "&:hover": { color: Colors.yellow } }}
+            >
+              Privacy Policy
+            </Link>
+            <CookiePreferencesLink />
+          </Box>
         </Box>
       </Container>
     </Box >
