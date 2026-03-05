@@ -8,6 +8,7 @@ import theme from '../../theme';
 import '../../globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/ui/Footer';
+import CookieBanner from '@/ui/CookieBanner';
 
 export const metadata: Metadata = {
   title: "Beacon Auto Care - NAPA AutoCare Center",
@@ -40,16 +41,29 @@ const rubik = Rubik({
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es" className={`${rubik.variable}`}>
+      <head>
+        {/* Initialize GA consent mode — defaults to denied until user accepts */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: localStorage.getItem('cookieConsent') === 'accepted' ? 'granted' : 'denied'
+          });
+        `}} />
+      </head>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
             {children}
             <Footer />
+            <CookieBanner />
           </ThemeProvider>
         </AppRouterCacheProvider>
 
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        {process.env.NODE_ENV === "production" && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        )}
       </body>
     </html>
   );

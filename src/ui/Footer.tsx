@@ -8,6 +8,7 @@ import {
 import Image from "next/image"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
+import CookiePreferencesLink from "@/ui/CookiePreferencesLink"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -110,10 +111,11 @@ export default function Footer() {
         </Box>
 
         {/* Copyright bar */}
-        <Box >
-          <Typography variant="body2" >
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
+          <Typography variant="body2">
             Copyright © {new Date().getFullYear()} Beacon Auto Care by AUTOBO LLC
           </Typography>
+          <CookiePreferencesLink />
         </Box>
       </Container>
     </Box >

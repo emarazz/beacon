@@ -116,7 +116,7 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           // textTransform: 'none',
-          borderRadius: 24,
+          borderRadius: 0,
         },
       },
     },
