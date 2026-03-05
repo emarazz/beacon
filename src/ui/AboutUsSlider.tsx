@@ -12,9 +12,6 @@ const slides = [
   { src: "/img/beacon-sunset-01.webp", alt: "Beacon Auto Care team" },
 ]
 
-// Duplicate to avoid loop glitch with small slide counts (need > 2×perView)
-const displaySlides = [...slides, ...slides]
-
 export default function AboutUsSlider() {
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -48,7 +45,7 @@ export default function AboutUsSlider() {
   return (
     <Box sx={{ position: "relative", minWidth: 0, width: "100%" }}>
       <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
-        {displaySlides.map((slide, i) => (
+        {slides.map((slide, i) => (
           <Box key={i} className="keen-slider__slide" sx={{ position: "relative", aspectRatio: "4/3" }}>
             <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: "cover" }} />
           </Box>

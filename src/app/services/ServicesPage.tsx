@@ -97,6 +97,7 @@ export default function ServicesPage() {
       </Box>
       <Box component="main">
         <Container
+          id="specials"
           component="section"
           sx={{
             display: "flex",
@@ -104,6 +105,7 @@ export default function ServicesPage() {
             gap: 4,
             paddingTop: 6,
             paddingBottom: 10,
+            scrollMarginTop: 8,
           }}
         >
           <AnimateIn variant="fadeUp">
@@ -151,42 +153,43 @@ export default function ServicesPage() {
             </Box>
           </AnimateIn>
 
-          <AnimateInGroup sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" }, gap: 4 }}>
+          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" }, gap: 4 }}>
             {services.map((service) => (
-              <AnimateInItem key={service.id} variant="fadeUp">
-                <Paper
-                  sx={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: 2,
-                    padding: 2,
-                    width: "100%"
-                  }}
-                >
-                  <Box display="flex" flexDirection={"column"} gap={1}>
-                    <Box display="flex" bgcolor={Colors.black} justifyContent="center">
-                      <Typography variant="button" color={Colors.white} px={2} py={0.75}>
-                        {service.title}
-                      </Typography>
-                    </Box>
-
-                    <Typography>
-                      {service.text}
+              <Paper
+                key={service.id}
+                id={service.id}
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 2,
+                  padding: 2,
+                  height: "100%",
+                  scrollMarginTop: 8,
+                }}
+              >
+                <Box display="flex" flexDirection={"column"} gap={1}>
+                  <Box display="flex" bgcolor={Colors.black} justifyContent="center">
+                    <Typography variant="button" color={Colors.white} px={2} py={0.75}>
+                      {service.title}
                     </Typography>
                   </Box>
 
-                  <Box display="flex" justifyContent="center" alignItems="center">
-                    <Image
-                      src={service.src}
-                      alt={service.alt}
-                      width={120}
-                      height={120}
-                    />
-                  </Box>
-                </Paper>
-              </AnimateInItem>
+                  <Typography>
+                    {service.text}
+                  </Typography>
+                </Box>
+
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <Image
+                    src={service.src}
+                    alt={service.alt}
+                    width={120}
+                    height={120}
+                  />
+                </Box>
+              </Paper>
             ))}
-          </AnimateInGroup>
+          </Box>
         </Container>
       </Box>
     </>

@@ -110,6 +110,7 @@ let theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: `
         b { font-weight: 500; }
+        html { scroll-behavior: smooth; }
       `,
     },
     MuiButton: {

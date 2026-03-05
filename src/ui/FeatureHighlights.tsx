@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
+import type { KeenSliderPlugin } from "keen-slider"
 import "keen-slider/keen-slider.min.css"
 import { Box, IconButton } from "@mui/material"
 import { ChevronLeft, ChevronRight } from "@mui/icons-material"
@@ -14,11 +15,19 @@ const slides = [
   { src: "/img/highlights/fleet-services.webp", alt: "Fleet services" },
 ]
 
-// Duplicate so perView:4 always has slides to scroll into — prevents the
-// "disappearing slide" glitch when slide count equals perView in loop mode.
-// Need > 2×perView slides for keen-slider loop clones to work seamlessly.
-// max perView = 4, so minimum is 9; tripling to 12 gives comfortable margin.
 const displaySlides = [...slides, ...slides]
+
+// Fixes floating point drift in loop mode with spacing (keen-slider issue #349).
+// After enough cycles, pos % length accumulates rounding errors that corrupt
+// details.rel. When detected (rel===0 but progress!==0), snap back instantly.
+const FixRewind: KeenSliderPlugin = (slider) => {
+  slider.on("animationEnded", (slider) => {
+    const { rel, progress } = slider.track.details
+    if (rel === 0 && progress !== 0) {
+      slider.moveToIdx(0, true, { duration: 0 })
+    }
+  })
+}
 
 export default function FeatureHighlights() {
   const [loaded, setLoaded] = useState(false)
@@ -58,7 +67,7 @@ export default function FeatureHighlights() {
       slider.on("dragStarted", clearNextTimeout)
       slider.on("animationEnded", nextTimeout)
       slider.on("updated", nextTimeout)
-    }]
+    }, FixRewind]
   )
 
   return (
