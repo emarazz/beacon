@@ -18,7 +18,7 @@ const slides = [
 // "disappearing slide" glitch when slide count equals perView in loop mode.
 // Need > 2×perView slides for keen-slider loop clones to work seamlessly.
 // max perView = 4, so minimum is 9; tripling to 12 gives comfortable margin.
-const displaySlides = [...slides, ...slides, ...slides]
+const displaySlides = [...slides, ...slides]
 
 export default function FeatureHighlights() {
   const [loaded, setLoaded] = useState(false)

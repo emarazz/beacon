@@ -46,7 +46,7 @@ export default function HomePage() {
 
         {/* Hero content */}
         <Container sx={{ py: 8 }}>
-          <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+          <Box sx={{ display: "grid", gap: 4, gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, justifyContent: "flex-start" }}>
             <AnimateIn variant="fadeIn" delay={0.3}>
               <PromoSlider />
             </AnimateIn>
@@ -101,6 +101,7 @@ export default function HomePage() {
               display: "flex",
               flexDirection: "column",
               gap: 2,
+              height: "100%"
             }}
           >
             <Box>

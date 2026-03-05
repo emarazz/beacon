@@ -23,7 +23,7 @@ export default function PromoSlider() {
       loop: true,
       initial: 0,
       defaultAnimation: { duration: 1000, easing: (t) => t * (2 - t) },
-      slideChanged(slider) {
+      animationEnded(slider) {
         setCurrentSlide(slider.track.details.rel)
       },
       created() {
@@ -63,17 +63,13 @@ export default function PromoSlider() {
   )
 
   return (
-    <Box sx={{ display: "flex", width: { xs: "100%", sm: "240px" }, flexDirection: "column", gap: 1 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 1, width: "100%", minWidth: 0, overflow: "hidden" }}>
 
       {/* Slider + Arrows */}
       <NextLink href="/services#specials" style={{ textDecoration: "none", display: "block" }}>
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ position: "relative" }} >
 
-          <Box
-            ref={sliderRef}
-            className="keen-slider"
-            sx={{ overflow: "hidden" }}
-          >
+          <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
             {slides.map((slide, i) => (
               <Box
                 key={i}
@@ -136,7 +132,7 @@ export default function PromoSlider() {
           {slides.map((_, idx) => (
             <Box
               key={idx}
-              onClick={() => instanceRef.current?.moveToIdx(idx)}
+              onClick={() => { setCurrentSlide(idx); instanceRef.current?.moveToIdx(idx) }}
               sx={{
                 width: 8,
                 height: 8,

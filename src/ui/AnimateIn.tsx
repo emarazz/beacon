@@ -1,18 +1,18 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { ReactNode } from "react"
 import { SxProps, Theme } from "@mui/material"
 import { Box } from "@mui/material"
 
 export type AnimateVariant = "fadeUp" | "fadeIn" | "slideLeft" | "slideRight" | "grow"
 
-const itemVariants: Record<AnimateVariant, { hidden: object; visible: object }> = {
-  fadeUp:     { hidden: { opacity: 0, y: 36 },        visible: { opacity: 1, y: 0 } },
-  fadeIn:     { hidden: { opacity: 0 },               visible: { opacity: 1 } },
-  slideLeft:  { hidden: { opacity: 0, x: -48 },       visible: { opacity: 1, x: 0 } },
-  slideRight: { hidden: { opacity: 0, x: 48 },        visible: { opacity: 1, x: 0 } },
-  grow:       { hidden: { opacity: 0, scale: 0.92 },  visible: { opacity: 1, scale: 1 } },
+const itemVariants: Record<AnimateVariant, Variants> = {
+  fadeUp: { hidden: { opacity: 0, y: 36 }, visible: { opacity: 1, y: 0 } },
+  fadeIn: { hidden: { opacity: 0 }, visible: { opacity: 1 } },
+  slideLeft: { hidden: { opacity: 0, x: -48 }, visible: { opacity: 1, x: 0 } },
+  slideRight: { hidden: { opacity: 0, x: 48 }, visible: { opacity: 1, x: 0 } },
+  grow: { hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, scale: 1 } },
 }
 
 const staggerContainer = {
@@ -36,6 +36,7 @@ export function AnimateIn({ children, variant = "fadeUp", delay = 0, duration = 
       viewport={{ once: true, margin: "-80px" }}
       variants={itemVariants[variant]}
       transition={{ duration, delay, ease: "easeOut" }}
+      style={{ minWidth: 0 }}
     >
       {children}
     </motion.div>

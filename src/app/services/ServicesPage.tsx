@@ -154,35 +154,36 @@ export default function ServicesPage() {
           <AnimateInGroup sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" }, gap: 4 }}>
             {services.map((service) => (
               <AnimateInItem key={service.id} variant="fadeUp">
-              <Paper
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 2,
-                  padding: 2
-                }}
-              >
-                <Box display="flex" flexDirection={"column"} gap={1}>
-                  <Box display="flex" bgcolor={Colors.black} justifyContent="center">
-                    <Typography variant="button" color={Colors.white} px={2} py={0.75}>
-                      {service.title}
+                <Paper
+                  sx={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 2,
+                    padding: 2,
+                    width: "100%"
+                  }}
+                >
+                  <Box display="flex" flexDirection={"column"} gap={1}>
+                    <Box display="flex" bgcolor={Colors.black} justifyContent="center">
+                      <Typography variant="button" color={Colors.white} px={2} py={0.75}>
+                        {service.title}
+                      </Typography>
+                    </Box>
+
+                    <Typography>
+                      {service.text}
                     </Typography>
                   </Box>
 
-                  <Typography>
-                    {service.text}
-                  </Typography>
-                </Box>
-
-                <Box display="flex" justifyContent="center" alignItems="center">
-                  <Image
-                    src={service.src}
-                    alt={service.alt}
-                    width={120}
-                    height={120}
-                  />
-                </Box>
-              </Paper>
+                  <Box display="flex" justifyContent="center" alignItems="center">
+                    <Image
+                      src={service.src}
+                      alt={service.alt}
+                      width={120}
+                      height={120}
+                    />
+                  </Box>
+                </Paper>
               </AnimateInItem>
             ))}
           </AnimateInGroup>
