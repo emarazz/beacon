@@ -74,7 +74,7 @@ export default function FeatureHighlights() {
     <Box sx={{ position: "relative" }}>
       <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
         {displaySlides.map((slide, i) => (
-          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", aspectRatio: "0.793" }}>
+          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", paddingTop: "126.1%" }}>
             <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: "cover" }} />
           </Box>
         ))}

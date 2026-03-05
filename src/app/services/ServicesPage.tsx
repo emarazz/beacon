@@ -4,7 +4,6 @@ import Navbar from "@/ui/Navbar"
 import Image from "next/image"
 import { Colors } from "@/ui/colors"
 import Link from "next/link"
-import { AnimateIn, AnimateInGroup, AnimateInItem } from "@/ui/AnimateIn"
 
 const deals = [
   { src: "img/deals/deal1.webp", alt: "Special deal 1" },
@@ -95,7 +94,7 @@ export default function ServicesPage() {
         <Typography component="h1">Auto Repair &amp; Maintenance Services — Doral, FL</Typography>
         <p>Full-service auto repair in Doral, FL: oil changes, tire services, brake repair, AC service, engine diagnostics, electrical, suspension &amp; more. NAPA AutoCare Center. (305) 471-8400.</p>
       </Box>
-      <Box component="main">
+      <Box component="main" bgcolor={Colors.gray}>
         <Container
           id="specials"
           component="section"
@@ -108,30 +107,26 @@ export default function ServicesPage() {
             scrollMarginTop: 8,
           }}
         >
-          <AnimateIn variant="fadeUp">
-            <Box>
-              <Typography variant="h2">
-                <b>SPECIALS</b>
-              </Typography>
+          <Box>
+            <Typography variant="h2">
+              <b>SPECIALS</b>
+            </Typography>
 
-              <Divider sx={{ mt: 0.25 }} />
-            </Box>
-          </AnimateIn>
+            <Divider sx={{ mt: 0.25 }} />
+          </Box>
 
-          <AnimateInGroup sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, gap: 2 }}>
+          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, gap: 2 }}>
             {deals.map((deal, index) => (
-              <AnimateInItem key={`special-${index + 1}`} variant="grow">
-                <Box sx={{ position: "relative", aspectRatio: "9/16" }}>
-                  <Image
-                    fill
-                    src={deal.src}
-                    alt={deal.alt}
-                    style={{ objectFit: "cover" }}
-                  />
-                </Box>
-              </AnimateInItem>
+              <Box key={`special-${index + 1}`} sx={{ position: "relative", paddingTop: "177.78%" }}>
+                <Image
+                  fill
+                  src={deal.src}
+                  alt={deal.alt}
+                  style={{ objectFit: "cover" }}
+                />
+              </Box>
             ))}
-          </AnimateInGroup>
+          </Box>
         </Container>
 
         <Container
@@ -143,15 +138,13 @@ export default function ServicesPage() {
             paddingBottom: 16,
           }}
         >
-          <AnimateIn variant="fadeUp">
-            <Box>
-              <Typography variant="h2">
-                <b>SERVICES</b> WE PROVIDE
-              </Typography>
+          <Box>
+            <Typography variant="h2">
+              <b>SERVICES</b> WE PROVIDE
+            </Typography>
 
-              <Divider sx={{ mt: 0.25 }} />
-            </Box>
-          </AnimateIn>
+            <Divider sx={{ mt: 0.25 }} />
+          </Box>
 
           <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" }, gap: 4 }}>
             {services.map((service) => (

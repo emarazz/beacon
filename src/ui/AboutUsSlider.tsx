@@ -46,7 +46,7 @@ export default function AboutUsSlider() {
     <Box sx={{ position: "relative", minWidth: 0, width: "100%" }}>
       <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
         {slides.map((slide, i) => (
-          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", aspectRatio: "4/3" }}>
+          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", paddingTop: "75%" }}>
             <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: "cover" }} />
           </Box>
         ))}

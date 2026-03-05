@@ -74,7 +74,7 @@ export default function PromoSlider() {
               <Box
                 key={i}
                 className="keen-slider__slide"
-                sx={{ position: "relative", aspectRatio: "9/16" }}
+                sx={{ position: "relative", paddingTop: "177.78%" }}
               >
                 <Image
                   src={slide.src}

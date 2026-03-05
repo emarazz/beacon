@@ -102,7 +102,7 @@ let theme = createTheme({
       main: Colors.yellow,
     },
     background: {
-      default: Colors.gray
+      default: Colors.blue
     }
   },
 

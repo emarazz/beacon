@@ -2,7 +2,6 @@ import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { Colors } from "@/ui/colors";
-import { AnimateInGroup, AnimateInItem } from "@/ui/AnimateIn";
 
 const services = [
   { title: "TIRES AND WHEELS", id: "tires-and-wheels", src: "/img/services/tires-and-wheels.webp", alt: "Tires and Wheels" },
@@ -19,7 +18,7 @@ const services = [
 
 export default function FeaturedServices() {
   return (
-    <AnimateInGroup
+    <Box
       sx={{
         display: "grid",
         gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(5, 1fr)" },
@@ -27,37 +26,35 @@ export default function FeaturedServices() {
       }}
     >
       {services.map((service) => (
-        <AnimateInItem key={service.id} variant="fadeUp">
-          <Box display="flex" flexDirection="column" gap={2} alignItems="center">
-            <Box display={{ xs: "none", sm: "block" }}>
-              <Image
-                src={service.src}
-                alt={service.alt}
-                width={80}
-                height={80}
-              />
-            </Box>
-
-            <Button
-              variant="contained"
-              LinkComponent={Link}
-              href={`/services#${service.id}`}
-              fullWidth
-              sx={{
-                borderRadius: 0,
-                backgroundColor: Colors.black,
-                color: Colors.white,
-                "&:hover": {
-                  backgroundColor: Colors.yellow,
-                  color: Colors.black,
-                },
-              }}
-            >
-              {service.title}
-            </Button>
+        <Box key={service.id} display="flex" flexDirection="column" gap={2} alignItems="center">
+          <Box display={{ xs: "none", sm: "block" }}>
+            <Image
+              src={service.src}
+              alt={service.alt}
+              width={80}
+              height={80}
+            />
           </Box>
-        </AnimateInItem>
+
+          <Button
+            variant="contained"
+            LinkComponent={Link}
+            href={`/services#${service.id}`}
+            fullWidth
+            sx={{
+              borderRadius: 0,
+              backgroundColor: Colors.black,
+              color: Colors.white,
+              "&:hover": {
+                backgroundColor: Colors.yellow,
+                color: Colors.black,
+              },
+            }}
+          >
+            {service.title}
+          </Button>
+        </Box>
       ))}
-    </AnimateInGroup>
+    </Box>
   )
 }

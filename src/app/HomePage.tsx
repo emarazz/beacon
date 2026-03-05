@@ -5,7 +5,7 @@ import PromoSlider from "@/ui/PromoSlider"
 import Navbar from "@/ui/Navbar"
 import FeaturedServices from "@/ui/FeaturedServices"
 import FeatureHighlights from "@/ui/FeatureHighlights"
-import { AnimateIn } from "@/ui/AnimateIn"
+import { Colors } from "@/ui/colors"
 
 export default function HomePage() {
   return (
@@ -47,31 +47,29 @@ export default function HomePage() {
         {/* Hero content */}
         <Container sx={{ py: 8 }}>
           <Box sx={{ display: "grid", gap: 4, gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, justifyContent: "flex-start" }}>
-            <AnimateIn variant="fadeIn" delay={0.3}>
-              <PromoSlider />
-            </AnimateIn>
+            <PromoSlider />
           </Box>
         </Container>
       </Box>
 
       {/* ─── Feature Highlights ───────────────────────────────────── */}
-      <AnimateIn variant="fadeIn">
+      <Box bgcolor={Colors.gray}>
         <Container component="section" sx={{ py: 10 }}>
           <FeatureHighlights />
         </Container>
-      </AnimateIn>
+      </Box>
 
       {/* ─── Featured Services ────────────────────────────────────── */}
-      <Container
-        component="section"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 6,
-          paddingBottom: 16,
-        }}
-      >
-        <AnimateIn variant="fadeUp">
+      <Box bgcolor={Colors.gray}>
+        <Container
+          component="section"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            paddingBottom: 16,
+          }}
+        >
           <Box>
             <Typography variant="h2">
               <b>FEATURED</b> SERVICES
@@ -79,22 +77,22 @@ export default function HomePage() {
 
             <Divider sx={{ mt: 0.25 }} />
           </Box>
-        </AnimateIn>
 
-        <FeaturedServices />
-      </Container>
+          <FeaturedServices />
+        </Container>
+      </Box>
 
       {/* ─── About + Map ──────────────────────────────────────────── */}
-      <Container
-        component="section"
-        sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
-          gap: 4,
-          paddingBottom: 16,
-        }}
-      >
-        <AnimateIn variant="slideLeft">
+      <Box bgcolor={Colors.gray}>
+        <Container
+          component="section"
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
+            gap: 4,
+            paddingBottom: 16,
+          }}
+        >
           <Paper
             sx={{
               padding: 2,
@@ -120,9 +118,7 @@ export default function HomePage() {
 
             </Typography>
           </Paper>
-        </AnimateIn>
 
-        <AnimateIn variant="slideRight">
           <Paper
             sx={{
               padding: 2,
@@ -148,8 +144,8 @@ export default function HomePage() {
               allowFullScreen
             />
           </Paper>
-        </AnimateIn>
-      </Container>
+        </Container>
+      </Box>
     </>
   )
 }
