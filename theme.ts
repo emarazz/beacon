@@ -80,12 +80,12 @@ let theme = createTheme({
     //   lineHeight: 1.4,
     //   letterSpacing: "normal",
     // },
-    // button: {
-    //   fontSize: '0.875rem',
-    //   fontWeight: 300,
-    //   lineHeight: 1.4,
-    //   letterSpacing: "normal",
-    // },
+    button: {
+      fontSize: '1rem',
+      fontWeight: 500,
+      lineHeight: 1.4,
+      letterSpacing: "normal",
+    },
     // caption: {
     //   fontSize: '0.75rem',
     //   fontWeight: 300,
