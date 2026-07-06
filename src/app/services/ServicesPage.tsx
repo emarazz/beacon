@@ -5,13 +5,6 @@ import Image from "next/image"
 import { Colors } from "@/ui/colors"
 import Link from "next/link"
 
-const deals = [
-  { src: "img/deals/deal1.webp", alt: "Special deal 1" },
-  { src: "img/deals/deal2.webp", alt: "Special deal 2" },
-  { src: "img/deals/deal3.webp", alt: "Special deal 3" },
-  { src: "img/deals/deal4.webp", alt: "Special deal 4" }
-]
-
 const services = [
   {
     title: "TIRES AND WHEELS",
@@ -96,45 +89,12 @@ export default function ServicesPage() {
       </Box>
       <Box component="main" bgcolor={Colors.gray}>
         <Container
-          id="specials"
           component="section"
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: 4,
             paddingTop: 6,
-            paddingBottom: 10,
-            scrollMarginTop: 8,
-          }}
-        >
-          <Box>
-            <Typography variant="h2">
-              <b>SPECIALS</b>
-            </Typography>
-
-            <Divider sx={{ mt: 0.25 }} />
-          </Box>
-
-          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, gap: 2 }}>
-            {deals.map((deal, index) => (
-              <Box key={`special-${index + 1}`} sx={{ position: "relative", paddingTop: "177.78%" }}>
-                <Image
-                  fill
-                  src={deal.src}
-                  alt={deal.alt}
-                  style={{ objectFit: "cover" }}
-                />
-              </Box>
-            ))}
-          </Box>
-        </Container>
-
-        <Container
-          component="section"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 4,
             paddingBottom: 16,
           }}
         >

@@ -1,11 +1,17 @@
 import { Box, Container, Divider, Paper, Typography } from "@mui/material"
 import { visuallyHidden } from "@mui/utils"
 import Image from "next/image"
-import PromoSlider from "@/ui/PromoSlider"
+// import PromoSlider from "@/ui/PromoSlider"
 import Navbar from "@/ui/Navbar"
 import FeaturedServices from "@/ui/FeaturedServices"
 import FeatureHighlights from "@/ui/FeatureHighlights"
 import { Colors } from "@/ui/colors"
+
+const certifications = [
+  { src: "/img/certifications/napa-autocare-gold-certified.webp", alt: "NAPA AutoCare Gold Certified" },
+  { src: "/img/certifications/aaa-approved-auto-repair.webp", alt: "AAA Approved Auto Repair" },
+  { src: "/img/certifications/ase-blue-seal-of-excellence.webp", alt: "ASE Blue Seal of Excellence" },
+]
 
 export default function HomePage() {
   return (
@@ -21,6 +27,7 @@ export default function HomePage() {
           position: "relative",
           display: "flex",
           flexDirection: "column",
+          minHeight: { xs: 480, md: 640 },
         }}
       >
         {/* Background image — LCP element, no animation */}
@@ -45,11 +52,11 @@ export default function HomePage() {
         <Navbar variant="dark" />
 
         {/* Hero content */}
-        <Container sx={{ py: 8 }}>
+        {/* <Container sx={{ py: 8 }}>
           <Box sx={{ display: "grid", gap: 4, gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, justifyContent: "flex-start" }}>
             <PromoSlider />
           </Box>
-        </Container>
+        </Container> */}
       </Box>
 
       {/* ─── Feature Highlights ───────────────────────────────────── */}
@@ -114,9 +121,23 @@ export default function HomePage() {
               Beacon Auto Care provides top-quality car maintenance and tire services while maintaining
               integrity, reliability and affordability.<br /><br />
               We aim to be the go-to destination for all automotive needs, building long-lasting
-              relationships through exceptional service and attention to detail, by investing in latest technology, equipment and training.
+              relationships through exceptional service and attention to detail, by investing in latest technology, equipment and training.<br /><br />
+              Our certifications reflect our commitment:
 
             </Typography>
+
+            <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2, paddingX: 2, paddingTop: 2 }}>
+              {certifications.map((cert) => (
+                <Box key={cert.src} sx={{ position: "relative", paddingTop: "100%" }}>
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </Box>
+              ))}
+            </Box>
           </Paper>
 
           <Paper
