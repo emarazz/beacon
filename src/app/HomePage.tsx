@@ -1,11 +1,18 @@
-import { Box, Container, Divider, Paper, Typography } from "@mui/material"
+import { Box, Button, Container, Divider, Paper, Typography } from "@mui/material"
 import { visuallyHidden } from "@mui/utils"
 import Image from "next/image"
+import NextLink from "next/link"
 // import PromoSlider from "@/ui/PromoSlider"
 import Navbar from "@/ui/Navbar"
 import FeaturedServices from "@/ui/FeaturedServices"
 import FeatureHighlights from "@/ui/FeatureHighlights"
 import { Colors } from "@/ui/colors"
+
+const hiringHighlights = [
+  "$30–35/hr + weekly bonuses",
+  "Mon–Fri, no weekends",
+  "$100K+ income potential",
+]
 
 const certifications = [
   { src: "/img/certifications/napa-autocare-gold-certified.webp", alt: "NAPA AutoCare Gold Certified" },
@@ -57,6 +64,78 @@ export default function HomePage() {
             <PromoSlider />
           </Box>
         </Container> */}
+      </Box>
+
+      {/* ─── We're Hiring banner ─────────────────────────────────── */}
+      <Box bgcolor={Colors.black}>
+        <Container
+          component="section"
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 3,
+            paddingY: 4,
+          }}
+        >
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: { xs: "center", md: "left" } }}>
+            <Typography variant="h4" color={Colors.white}>
+              <Box
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  animation: "hiringBannerBeat 1.2s ease-in-out infinite",
+                  "@keyframes hiringBannerBeat": {
+                    "0%, 100%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.12)" },
+                  },
+                }}
+              >
+                <b>WE&rsquo;RE</b> <Box component="span" color={Colors.yellow}>HIRING!</Box>
+              </Box>
+            </Typography>
+
+            <Typography variant="body1" color={Colors.white}>
+              We&rsquo;re looking for a Senior Automotive Technician / Diagnostic Lead to join our
+              5-bay shop in Doral, FL.
+            </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: { xs: "center", md: "flex-start" },
+                gap: { xs: 1, md: 3 },
+              }}
+            >
+              {hiringHighlights.map((highlight) => (
+                <Typography key={highlight} variant="body2" color={Colors.white}>
+                  {highlight}
+                </Typography>
+              ))}
+            </Box>
+          </Box>
+
+          <Button
+            component={NextLink}
+            href="/careers"
+            variant="contained"
+            sx={{
+              backgroundColor: Colors.yellow,
+              color: Colors.black,
+              borderRadius: 0,
+              paddingX: 4,
+              paddingY: 1.5,
+              whiteSpace: "nowrap",
+              "&:hover": {
+                backgroundColor: Colors.white,
+              },
+            }}
+          >
+            More Info
+          </Button>
+        </Container>
       </Box>
 
       {/* ─── Feature Highlights ───────────────────────────────────── */}
