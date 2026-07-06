@@ -181,7 +181,23 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                     },
                   }}
                 >
-                  {link.label}
+                  {isHiring ? (
+                    <Box
+                      component="span"
+                      sx={{
+                        display: "inline-block",
+                        animation: "navHiringBeat 1.2s ease-in-out infinite",
+                        "@keyframes navHiringBeat": {
+                          "0%, 100%": { transform: "scale(1)" },
+                          "50%": { transform: "scale(1.12)" },
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Box>
+                  ) : (
+                    link.label
+                  )}
                 </Button>
               )
             })}
@@ -239,7 +255,23 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                       },
                     }}
                   >
-                    {link.label}
+                    {isHiring ? (
+                      <Box
+                        component="span"
+                        sx={{
+                          display: "inline-block",
+                          animation: "navHiringBeat 1.2s ease-in-out infinite",
+                          "@keyframes navHiringBeat": {
+                            "0%, 100%": { transform: "scale(1)" },
+                            "50%": { transform: "scale(1.12)" },
+                          },
+                        }}
+                      >
+                        {link.label}
+                      </Box>
+                    ) : (
+                      link.label
+                    )}
                   </Button>
                 )
               })}

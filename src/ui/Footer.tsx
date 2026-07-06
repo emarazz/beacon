@@ -94,20 +94,39 @@ export default function Footer() {
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                component={NextLink}
-                href={link.href}
-                sx={{
-                  color: Colors.white,
-                  typography: "button",
-                  "&:hover": { color: Colors.yellow },
-                }}
-              >
-                {link.label.toUpperCase()}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isHiring = link.href === "/careers"
+              return (
+                <Link
+                  key={link.href}
+                  component={NextLink}
+                  href={link.href}
+                  sx={{
+                    color: isHiring ? Colors.yellow : Colors.white,
+                    typography: "button",
+                    "&:hover": { color: Colors.yellow },
+                  }}
+                >
+                  {isHiring ? (
+                    <Box
+                      component="span"
+                      sx={{
+                        display: "inline-block",
+                        animation: "footerHiringBeat 1.2s ease-in-out infinite",
+                        "@keyframes footerHiringBeat": {
+                          "0%, 100%": { transform: "scale(1)" },
+                          "50%": { transform: "scale(1.12)" },
+                        },
+                      }}
+                    >
+                      {link.label.toUpperCase()}
+                    </Box>
+                  ) : (
+                    link.label.toUpperCase()
+                  )}
+                </Link>
+              )
+            })}
           </Box>
         </Box>
 
