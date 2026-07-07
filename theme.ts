@@ -13,13 +13,13 @@ let theme = createTheme({
 
     fontFamily: 'var(--font-rubik)',
 
-    // h1: {
-    //   fontFamily: 'var(--font-lato)',
-    //   fontSize: '2.75rem',
-    //   fontWeight: 300,
-    //   lineHeight: 1.1,
-    //   letterSpacing: "normal",
-    // },
+    h1: {
+      fontFamily: 'var(--font-rubi)',
+      fontSize: '2.75rem',
+      fontWeight: 300,
+      lineHeight: 1.1,
+      letterSpacing: "normal",
+    },
     h2: {
       fontFamily: 'var(--font-rubi)',
       fontSize: '1.75rem',

@@ -31,7 +31,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about-us" },
   { label: "Find Us", href: "/find-us" },
-  { label: "We're Hiring!", href: "/careers" },
+  { label: "Careers", href: "/careers" },
 ]
 
 export default function Navbar({ variant = "white" }: { variant?: NavbarVariant }) {
@@ -162,18 +162,15 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
           >
             {navLinks.map((link) => {
               const isSelected = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
-              const isHiring = link.href === "/careers"
               return (
                 <Button
                   key={link.href}
                   component={NextLink}
                   href={link.href}
                   sx={{
-                    width: isHiring ? "auto" : 128,
-                    paddingX: isHiring ? 2 : undefined,
-                    fontWeight: isHiring ? 700 : undefined,
-                    color: isSelected || isHiring ? Colors.black : textColor,
-                    backgroundColor: isSelected || isHiring ? Colors.yellow : "transparent",
+                    width: 128,
+                    color: isSelected ? Colors.black : textColor,
+                    backgroundColor: isSelected ? Colors.yellow : "transparent",
                     borderRadius: 0,
                     "&:hover": {
                       backgroundColor: Colors.black,
@@ -181,23 +178,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                     },
                   }}
                 >
-                  {isHiring ? (
-                    <Box
-                      component="span"
-                      sx={{
-                        display: "inline-block",
-                        animation: "navHiringBeat 1.2s ease-in-out infinite",
-                        "@keyframes navHiringBeat": {
-                          "0%, 100%": { transform: "scale(1)" },
-                          "50%": { transform: "scale(1.12)" },
-                        },
-                      }}
-                    >
-                      {link.label}
-                    </Box>
-                  ) : (
-                    link.label
-                  )}
+                  {link.label}
                 </Button>
               )
             })}
@@ -233,7 +214,6 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
             <Box sx={{ display: "flex", flexDirection: "column", paddingY: 1 }}>
               {navLinks.map((link) => {
                 const isSelected = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
-                const isHiring = link.href === "/careers"
                 return (
                   <Button
                     key={link.href}
@@ -243,8 +223,8 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                     onClick={() => setDrawerOpen(false)}
                     sx={{
                       justifyContent: "flex-start",
-                      color: isSelected || isHiring ? Colors.black : (isDark ? Colors.white : Colors.black),
-                      backgroundColor: isSelected || isHiring ? Colors.yellow : "transparent",
+                      color: isSelected ? Colors.black : (isDark ? Colors.white : Colors.black),
+                      backgroundColor: isSelected ? Colors.yellow : "transparent",
                       borderRadius: 0,
                       fontWeight: 600,
                       paddingX: 2,
@@ -255,23 +235,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                       },
                     }}
                   >
-                    {isHiring ? (
-                      <Box
-                        component="span"
-                        sx={{
-                          display: "inline-block",
-                          animation: "navHiringBeat 1.2s ease-in-out infinite",
-                          "@keyframes navHiringBeat": {
-                            "0%, 100%": { transform: "scale(1)" },
-                            "50%": { transform: "scale(1.12)" },
-                          },
-                        }}
-                      >
-                        {link.label}
-                      </Box>
-                    ) : (
-                      link.label
-                    )}
+                    {link.label}
                   </Button>
                 )
               })}

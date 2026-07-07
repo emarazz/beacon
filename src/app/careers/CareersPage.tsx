@@ -32,7 +32,7 @@ export default function CareersPage() {
           </Box>
 
           <Typography variant="h5">
-            <b>Join Our Team at Beacon Auto Care!</b>
+            <b>Senior Automotive Technician</b>
           </Typography>
 
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>

@@ -24,7 +24,6 @@ export default function HomePage() {
   return (
     <>
       <Box sx={visuallyHidden}>
-        <Typography component="h1">Beacon Auto Care | NAPA AutoCare Center — Doral, FL</Typography>
         <p>Beacon Auto Care is a NAPA AutoCare Center in Doral, FL. Expert car maintenance, tire services, brakes, AC & auto repair. Serving Doral, Miami & surrounding areas. Call (305) 471-8400.</p>
       </Box>
 
@@ -59,6 +58,20 @@ export default function HomePage() {
         <Navbar variant="dark" />
 
         {/* Hero content */}
+        <Container
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            flexGrow: 1,
+            paddingY: 8,
+          }}
+        >
+          <Typography component="h1" variant="h1" color={Colors.white} maxWidth="md">
+            <b>DORAL&rsquo;S TRUSTED <br />NAPA AUTO CARE CENTER</b>
+          </Typography>
+        </Container>
+
         {/* <Container sx={{ py: 8 }}>
           <Box sx={{ display: "grid", gap: 4, gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }, justifyContent: "flex-start" }}>
             <PromoSlider />
@@ -67,7 +80,7 @@ export default function HomePage() {
       </Box>
 
       {/* ─── We're Hiring banner ─────────────────────────────────── */}
-      <Box bgcolor={Colors.black}>
+      {/* <Box bgcolor={Colors.black}>
         <Container
           component="section"
           sx={{
@@ -81,19 +94,7 @@ export default function HomePage() {
         >
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: { xs: "center", md: "left" } }}>
             <Typography variant="h4" color={Colors.white}>
-              <Box
-                component="span"
-                sx={{
-                  display: "inline-block",
-                  animation: "hiringBannerBeat 1.2s ease-in-out infinite",
-                  "@keyframes hiringBannerBeat": {
-                    "0%, 100%": { transform: "scale(1)" },
-                    "50%": { transform: "scale(1.12)" },
-                  },
-                }}
-              >
-                <b>WE&rsquo;RE</b> <Box component="span" color={Colors.yellow}>HIRING!</Box>
-              </Box>
+              <b>WE&rsquo;RE</b> <Box component="span" color={Colors.yellow}>HIRING!</Box>
             </Typography>
 
             <Typography variant="body1" color={Colors.white}>
@@ -136,7 +137,7 @@ export default function HomePage() {
             More Info
           </Button>
         </Container>
-      </Box>
+      </Box> */}
 
       {/* ─── Feature Highlights ───────────────────────────────────── */}
       <Box bgcolor={Colors.gray}>
@@ -200,8 +201,7 @@ export default function HomePage() {
               Beacon Auto Care provides top-quality car maintenance and tire services while maintaining
               integrity, reliability and affordability.<br /><br />
               We aim to be the go-to destination for all automotive needs, building long-lasting
-              relationships through exceptional service and attention to detail, by investing in latest technology, equipment and training.<br /><br />
-              Our certifications reflect our commitment:
+              relationships through exceptional service and attention to detail, by investing in latest technology, equipment and training.
 
             </Typography>
 
