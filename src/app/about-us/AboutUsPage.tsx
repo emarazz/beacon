@@ -67,12 +67,12 @@ export default function AboutUsPage() {
               </Box>
 
 
-              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "2fr 1fr" }, gap: 4, alignItems: "center" }}>
+              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 4, alignItems: "center" }}>
                 <Typography>
                   At our repair shop, excellence isn&rsquo;t just a goal — it&rsquo;s our standard. As a NAPA
                   Gold Certified AutoCare Center, we deliver premium-quality repairs backed by trusted parts
                   and industry-leading service. We&rsquo;re also proud to be a AAA Approved Repair Facility,
-                  a distinction earned through consistent honesty, reliability, and customer satisfaction.
+                  a distinction earned through consistent honesty, reliability, and customer satisfaction.<br /><br />
                   Our team carries the prestigious ASE Blue Seal of Excellence, proving our technicians are
                   among the most highly trained and certified professionals in the industry. These elite
                   certifications reflect our commitment to delivering superior workmanship, transparent
