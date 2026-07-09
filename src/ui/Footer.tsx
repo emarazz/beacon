@@ -12,7 +12,7 @@ import CookiePreferencesLink from "@/ui/CookiePreferencesLink"
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Fleet Management", href: "/fleet-management" },
+  { label: "Fleet", href: "/fleet" },
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about-us" },
   { label: "Find Us", href: "/find-us" },

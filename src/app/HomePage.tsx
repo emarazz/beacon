@@ -32,7 +32,7 @@ export default function HomePage() {
         {/* Background image — LCP element, no animation */}
         <Image
           // src="/img/beacon-sunset-01.webp"
-          src="/img/beacon-home-02.webp"
+          src="/img/beacon-home-03.webp"
           alt="Beacon Auto Care - NAPA AutoCare Center"
           fill
           priority
@@ -58,7 +58,8 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             flexGrow: 1,
-            paddingY: 8,
+            paddingTop: 12,
+            paddingBottom: 6,
           }}
         >
           <Typography component="h1" variant="h1" color={Colors.white} maxWidth="md">

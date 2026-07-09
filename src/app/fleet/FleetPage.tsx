@@ -36,12 +36,12 @@ const networks = [
   "LeasePlan",
 ]
 
-export default function FleetManagementPage() {
+export default function FleetPage() {
   return (
     <>
       <Navbar variant="white" />
       <Box sx={visuallyHidden}>
-        <Typography component="h1">Fleet Management — Corporate Fleet Maintenance in Doral, FL</Typography>
+        <Typography component="h1">Fleet — Corporate Fleet Maintenance in Doral, FL</Typography>
         <p>Beacon Auto Care partners with corporate fleets for hassle-free maintenance: instant digital approvals, direct billing, and ASE-certified technicians. Doral, FL.</p>
       </Box>
       <Box component="main" bgcolor={Colors.gray}>
@@ -57,7 +57,7 @@ export default function FleetManagementPage() {
         >
           <Box>
             <Typography variant="h2">
-              <b>FLEET</b> MANAGEMENT
+              <b>FLEET</b>
             </Typography>
             <Divider sx={{ mt: 0.25 }} />
           </Box>

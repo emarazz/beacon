@@ -39,6 +39,15 @@ export default function ImageSlider({ slides }: { slides: Slide[] }) {
     }]
   )
 
+  if (slides.length <= 1) {
+    const slide = slides[0]
+    return (
+      <Box sx={{ position: "relative", minWidth: 0, width: "100%", paddingTop: "125%", minHeight: "320px" }}>
+        {slide && <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: "cover" }} />}
+      </Box>
+    )
+  }
+
   return (
     <Box sx={{ position: "relative", minWidth: 0, width: "100%" }}>
       <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
