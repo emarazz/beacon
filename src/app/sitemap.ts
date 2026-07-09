@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE}/fleet-management`,
+      lastModified: new Date("2026-07-09"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/find-us`,
       lastModified: new Date("2026-03-01"),
       changeFrequency: "yearly",

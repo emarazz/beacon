@@ -28,6 +28,7 @@ type NavbarVariant = "dark" | "white"
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Fleet Management", href: "/fleet-management" },
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about-us" },
   { label: "Find Us", href: "/find-us" },
@@ -168,7 +169,9 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                   component={NextLink}
                   href={link.href}
                   sx={{
-                    width: 128,
+                    minWidth: 128,
+                    paddingX: 2,
+                    whiteSpace: "nowrap",
                     color: isSelected ? Colors.black : textColor,
                     backgroundColor: isSelected ? Colors.yellow : "transparent",
                     borderRadius: 0,

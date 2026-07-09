@@ -2,8 +2,13 @@ import { Box, Container, Divider, Typography } from "@mui/material"
 import { visuallyHidden } from "@mui/utils"
 import Image from "next/image"
 import Navbar from "@/ui/Navbar"
-import AboutUsSlider from "@/ui/AboutUsSlider"
+import ImageSlider from "@/ui/ImageSlider"
 import { Colors } from "@/ui/colors"
+
+const aboutUsSlides = [
+  { src: "/img/beacon-staff-01.webp", alt: "Beacon Auto Care shop" },
+  { src: "/img/beacon-sunset-01.webp", alt: "Beacon Auto Care team" },
+]
 
 const certifications = [
   { src: "/img/certifications/napa-autocare-gold-certified.webp", alt: "NAPA AutoCare Gold Certified" },
@@ -48,48 +53,48 @@ export default function AboutUsPage() {
 
             <Box display="flex" flexDirection="column" gap={4}>
 
-              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" }, gap: 4 }}>
-                <Typography>
-                  At Beacon Auto Care, our vision is to provide top-quality car maintenance
-                  and tire services to our customers, while maintaining a commitment to
-                  integrity, reliability and affordability.<br /><br />
+              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(5, 1fr)" }, gap: 4 }}>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 4, gridColumn: { xs: "span 1", md: "span 3" }, minWidth: 0 }}>
+                  <Typography >
+                    At Beacon Auto Care, our vision is to provide top-quality car maintenance
+                    and tire services to our customers, while maintaining a commitment to
+                    integrity, reliability and affordability.<br /><br />
 
-                  We strive to be the go-to destination for all of our customers' automotive
-                  needs, and to build long-lasting relationships through exceptional service
-                  and attention to detail.<br /><br />
+                    We strive to be the go-to destination for all of our customers' automotive
+                    needs, and to build long-lasting relationships through exceptional service
+                    and attention to detail. We will continue to invest in the latest technology, equipment, and
+                    training for our team members to ensure that we can meet the evolving
+                    needs of our customers.<br /><br />
 
-                  We will continue to invest in the latest technology, equipment, and
-                  training for our team members to ensure that we can meet the evolving
-                  needs of our customers.
-                </Typography>
-
-                <AboutUsSlider />
-              </Box>
+                    At our repair shop, excellence isn&rsquo;t just a goal — it&rsquo;s our standard. As a NAPA
+                    Gold Certified AutoCare Center, we deliver premium-quality repairs backed by trusted parts
+                    and industry-leading service. We&rsquo;re also proud to be a AAA Approved Repair Facility,
+                    a distinction earned through consistent honesty, reliability, and customer satisfaction.<br /><br />
 
 
-              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 4, alignItems: "center" }}>
-                <Typography>
-                  At our repair shop, excellence isn&rsquo;t just a goal — it&rsquo;s our standard. As a NAPA
-                  Gold Certified AutoCare Center, we deliver premium-quality repairs backed by trusted parts
-                  and industry-leading service. We&rsquo;re also proud to be a AAA Approved Repair Facility,
-                  a distinction earned through consistent honesty, reliability, and customer satisfaction.<br /><br />
-                  Our team carries the prestigious ASE Blue Seal of Excellence, proving our technicians are
-                  among the most highly trained and certified professionals in the industry. These elite
-                  certifications reflect our commitment to delivering superior workmanship, transparent
-                  communication, and a service experience you can trust every time you visit.
-                </Typography>
+                    Our team carries the prestigious ASE Blue Seal of Excellence, proving our technicians are
+                    among the most highly trained and certified professionals in the industry. These elite
+                    certifications reflect our commitment to delivering superior workmanship, transparent
+                    communication, and a service experience you can trust every time you visit.
+                  </Typography>
 
-                <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
-                  {certifications.map((cert) => (
-                    <Box key={cert.src} sx={{ position: "relative", paddingTop: "100%" }}>
-                      <Image
-                        src={cert.src}
-                        alt={cert.alt}
-                        fill
-                        style={{ objectFit: "contain" }}
-                      />
-                    </Box>
-                  ))}
+                  <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
+                    {certifications.map((cert) => (
+                      <Box key={cert.src} sx={{ position: "relative", paddingTop: "100%" }}>
+                        <Image
+                          src={cert.src}
+                          alt={cert.alt}
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                      </Box>
+                    ))}
+                  </Box>
+
+                </Box>
+
+                <Box sx={{ gridColumn: { xs: "span 1", md: "span 2" }, minWidth: 0 }}>
+                  <ImageSlider slides={aboutUsSlides} />
                 </Box>
               </Box>
             </Box>

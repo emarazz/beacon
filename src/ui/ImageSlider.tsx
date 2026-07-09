@@ -7,12 +7,9 @@ import { Box, IconButton } from "@mui/material"
 import { ChevronLeft, ChevronRight } from "@mui/icons-material"
 import Image from "next/image"
 
-const slides = [
-  { src: "/img/beacon-staff.webp", alt: "Beacon Auto Care shop" },
-  { src: "/img/beacon-sunset-01.webp", alt: "Beacon Auto Care team" },
-]
+type Slide = { src: string; alt: string }
 
-export default function AboutUsSlider() {
+export default function ImageSlider({ slides }: { slides: Slide[] }) {
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -46,7 +43,7 @@ export default function AboutUsSlider() {
     <Box sx={{ position: "relative", minWidth: 0, width: "100%" }}>
       <Box ref={sliderRef} className="keen-slider" sx={{ overflow: "hidden" }}>
         {slides.map((slide, i) => (
-          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", paddingTop: "75%", minHeight: "320px" }}>
+          <Box key={i} className="keen-slider__slide" sx={{ position: "relative", paddingTop: "125%", minHeight: "320px" }}>
             <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: "cover" }} />
           </Box>
         ))}
