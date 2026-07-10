@@ -107,7 +107,7 @@ export default function FleetPage() {
                   specific fleet network integration at{" "}
                   <Link component={NextLink} href="tel:+13054718400">(305) 471-8400</Link>
                   {" "}or{" "}
-                  <Link component={NextLink} href="mailto:service@beaconauto.net">service@beaconauto.net</Link>.
+                  <Link component={NextLink} href="mailto:shop@beaconauto.net">shop@beaconauto.net</Link>.
                 </Typography>
               </Box>
             </Box>

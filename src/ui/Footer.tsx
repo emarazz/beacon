@@ -79,8 +79,8 @@ export default function Footer() {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <EmailIcon sx={{ color: Colors.yellow, }} />
-              <Link component={NextLink} href="mailto:service@beaconauto.net" sx={{ color: Colors.white, typography: "body1" }}>
-                service@beaconauto.net
+              <Link component={NextLink} href="mailto:shop@beaconauto.net" sx={{ color: Colors.white, typography: "body1" }}>
+                shop@beaconauto.net
               </Link>
             </Box>
           </Box>

@@ -79,7 +79,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
               "longitude": -80.3397,
             },
             "telephone": "+13054718400",
-            "email": "service@beaconauto.net",
+            "email": "shop@beaconauto.net",
             "openingHoursSpecification": [{
               "@type": "OpeningHoursSpecification",
               "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

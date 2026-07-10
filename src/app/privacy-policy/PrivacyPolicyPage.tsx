@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
               </Typography>
               <Box component="ul" sx={{ mt: 1, pl: 3 }}>
                 <li><Typography>Email:{" "}
-                  <Link href="mailto:service@beaconauto.net">service@beaconauto.net</Link>
+                  <Link href="mailto:shop@beaconauto.net">shop@beaconauto.net</Link>
                 </Typography></li>
                 <li><Typography>Phone:{" "}
                   <Link href="tel:+13054718400">(305) 471-8400</Link>
