@@ -3,6 +3,7 @@ import { visuallyHidden } from "@mui/utils"
 import Navbar from "@/ui/Navbar"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
+import { ADDRESS, EMAIL, PHONE } from "@/ui/business"
 
 const roles = [
   {
@@ -33,7 +34,7 @@ export default function CareersPage() {
       <Navbar variant="white" />
       <Box sx={visuallyHidden}>
         <Typography component="h1">Careers — Join the Beacon Auto Care Team</Typography>
-        <p>Beacon Auto Care in Doral, FL is hiring Automotive Technicians, a DVI Inspector, and a Service Writer. Call or text (305) 471-8400 to schedule a private shop tour.</p>
+        <p>Beacon Auto Care in Doral, FL is hiring Automotive Technicians, a DVI Inspector, and a Service Writer. Call or text {PHONE.display} to schedule a private shop tour.</p>
       </Box>
       <Box component="main" bgcolor={Colors.gray}>
         <Container
@@ -100,14 +101,14 @@ export default function CareersPage() {
             <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5, mt: 1 }}>
               <Typography>
                 <b>Phone/Text:</b>{" "}
-                <Link component={NextLink} href="tel:+13054718400">305-471-8400</Link>
+                <Link component={NextLink} href={PHONE.href}>{PHONE.display}</Link>
               </Typography>
               <Typography>
                 <b>Email:</b>{" "}
-                <Link component={NextLink} href="mailto:shop@beaconauto.net">shop@beaconauto.net</Link>
+                <Link component={NextLink} href={`mailto:${EMAIL}`}>{EMAIL}</Link>
               </Typography>
               <Typography>
-                <b>Visit Us:</b> 8701 NW 13th Ter, Doral FL 33172
+                <b>Visit Us:</b> {ADDRESS.full}
               </Typography>
             </Box>
 

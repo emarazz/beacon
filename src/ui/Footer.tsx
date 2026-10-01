@@ -9,6 +9,7 @@ import Image from "next/image"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
 import CookiePreferencesLink from "@/ui/CookiePreferencesLink"
+import { ADDRESS, BUSINESS_NAME, EMAIL, HOURS, LEGAL_ENTITY, MAPS, PHONE } from "@/ui/business"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -56,31 +57,31 @@ export default function Footer() {
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <AccessTimeIcon sx={{ color: Colors.yellow, }} />
-              <Typography variant="body1">Mon – Fri: 7:00 AM – 6:00 PM</Typography>
+              <Typography variant="body1">{HOURS.display}</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <PhoneIcon sx={{ color: Colors.yellow, }} />
-              <Link component={NextLink} href="tel:+13054718400" sx={{ color: Colors.white, typography: "body1" }}>
-                (305) 471-8400
+              <Link component={NextLink} href={PHONE.href} sx={{ color: Colors.white, typography: "body1" }}>
+                {PHONE.display}
               </Link>
             </Box>
             <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}>
               <LocationOnIcon sx={{ color: Colors.yellow }} />
               <Link
                 component={NextLink}
-                href="https://goo.gl/maps/6tNDNvLRrgVAR2z27"
+                href={MAPS.link}
                 target="_blank"
                 rel="noopener"
                 sx={{ color: Colors.white }}
               >
-                <Typography variant="body1">8701 NW 13th Terrace</Typography>
-                <Typography variant="body1">Doral, FL 33172</Typography>
+                <Typography variant="body1">{ADDRESS.street}</Typography>
+                <Typography variant="body1">{ADDRESS.city}</Typography>
               </Link>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <EmailIcon sx={{ color: Colors.yellow, }} />
-              <Link component={NextLink} href="mailto:shop@beaconauto.net" sx={{ color: Colors.white, typography: "body1" }}>
-                shop@beaconauto.net
+              <Link component={NextLink} href={`mailto:${EMAIL}`} sx={{ color: Colors.white, typography: "body1" }}>
+                {EMAIL}
               </Link>
             </Box>
           </Box>
@@ -115,7 +116,7 @@ export default function Footer() {
         {/* Copyright bar */}
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
           <Typography variant="body2">
-            Copyright © {new Date().getFullYear()} Beacon Auto Care by AUTOBO LLC
+            Copyright © {new Date().getFullYear()} {BUSINESS_NAME} by {LEGAL_ENTITY}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <Link

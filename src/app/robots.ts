@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next"
+import { SITE_URL as BASE } from "@/ui/business"
 
-const BASE = process.env.NEXT_PUBLIC_URL || "https://beaconauto.net"
 
 export default function robots(): MetadataRoute.Robots {
   return {

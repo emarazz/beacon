@@ -4,6 +4,7 @@ import Navbar from "@/ui/Navbar"
 import Image from "next/image"
 import { Colors } from "@/ui/colors"
 import Link from "next/link"
+import { PHONE } from "@/ui/business"
 
 const services = [
   {
@@ -85,7 +86,7 @@ export default function ServicesPage() {
       <Navbar variant="white" />
       <Box sx={visuallyHidden}>
         <Typography component="h1">Auto Repair &amp; Maintenance Services — Doral, FL</Typography>
-        <p>Full-service auto repair in Doral, FL: oil changes, tire services, brake repair, AC service, engine diagnostics, electrical, suspension &amp; more. NAPA AutoCare Center. (305) 471-8400.</p>
+        <p>Full-service auto repair in Doral, FL: oil changes, tire services, brake repair, AC service, engine diagnostics, electrical, suspension &amp; more. NAPA AutoCare Center. {PHONE.display}.</p>
       </Box>
       <Box component="main" bgcolor={Colors.gray}>
         <Container

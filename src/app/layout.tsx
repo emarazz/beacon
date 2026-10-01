@@ -9,8 +9,8 @@ import '../../globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/ui/Footer';
 import CookieBanner from '@/ui/CookieBanner';
+import { ADDRESS, BUSINESS_NAME, EMAIL, GEO, HOURS, MAPS, PHONE, SITE_URL as BASE } from "@/ui/business";
 
-const BASE = process.env.NEXT_PUBLIC_URL || "https://beaconauto.net"
 const OG_IMAGE = "https://firebasestorage.googleapis.com/v0/b/beaconauto.firebasestorage.app/o/metadata%2Fog-image.webp?alt=media&token=ba67e22f-4672-42bf-b884-50df6043fa06"
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     default: "Beacon Auto Care | NAPA AutoCare Center — Doral, FL",
     template: "%s | Beacon Auto Care",
   },
-  description: "Beacon Auto Care is a NAPA AutoCare Center in Doral, FL. Expert car maintenance, tire services, brakes, AC, and diagnostics. Serving Doral, Miami & surrounding areas. Call (305) 471-8400.",
+  description: `Beacon Auto Care is a NAPA AutoCare Center in Doral, FL. Expert car maintenance, tire services, brakes, AC, and diagnostics. Serving Doral, Miami & surrounding areas. Call ${PHONE.display}.`,
   keywords: ["auto repair Doral FL", "NAPA AutoCare Doral", "car maintenance Doral", "tire service Doral", "oil change Doral", "brake repair Doral FL", "auto shop Miami"],
   openGraph: {
     title: "Beacon Auto Care | NAPA AutoCare Center — Doral, FL",
-    description: "Expert car maintenance, tire services & auto repair in Doral, FL. NAPA AutoCare Center. Mon–Fri 7am–6pm. (305) 471-8400.",
+    description: `Expert car maintenance, tire services & auto repair in Doral, FL. NAPA AutoCare Center. ${HOURS.short}. ${PHONE.display}.`,
     url: BASE,
-    siteName: "Beacon Auto Care",
+    siteName: BUSINESS_NAME,
     locale: "en_US",
     type: "website",
     images: [{ url: OG_IMAGE, width: 1200, height: 1200, alt: "Beacon Auto Care - NAPA AutoCare Center" }],
@@ -59,7 +59,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AutoRepair",
-            "name": "Beacon Auto Care",
+            "name": BUSINESS_NAME,
             "alternateName": "Beacon Auto Care NAPA AutoCare Center",
             "url": BASE,
             "logo": `${BASE}/img/beacon-napa-01.webp`,
@@ -67,28 +67,28 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             "description": "NAPA AutoCare Center in Doral, FL offering car maintenance, tire services, brake repair, diagnostics, AC service, and more.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "8701 NW 13th Terrace",
-              "addressLocality": "Doral",
-              "addressRegion": "FL",
-              "postalCode": "33172",
-              "addressCountry": "US",
+              "streetAddress": ADDRESS.street,
+              "addressLocality": ADDRESS.locality,
+              "addressRegion": ADDRESS.region,
+              "postalCode": ADDRESS.postalCode,
+              "addressCountry": ADDRESS.country,
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": 25.7855,
-              "longitude": -80.3397,
+              "latitude": GEO.latitude,
+              "longitude": GEO.longitude,
             },
-            "telephone": "+13054718400",
-            "email": "shop@beaconauto.net",
+            "telephone": PHONE.e164,
+            "email": EMAIL,
             "openingHoursSpecification": [{
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "07:00",
-              "closes": "18:00",
+              "dayOfWeek": HOURS.days,
+              "opens": HOURS.opens,
+              "closes": HOURS.closes,
             }],
             "priceRange": "$$",
             "areaServed": ["Doral", "Miami", "Hialeah", "Miami Lakes", "Miami-Dade County"],
-            "hasMap": "https://goo.gl/maps/6tNDNvLRrgVAR2z27",
+            "hasMap": MAPS.link,
             "sameAs": [],
           })
         }} />

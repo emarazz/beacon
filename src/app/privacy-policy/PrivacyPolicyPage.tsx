@@ -3,7 +3,7 @@ import { visuallyHidden } from "@mui/utils"
 import Navbar from "@/ui/Navbar"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
-import { ADDRESS, EMAIL, PHONE, SMS_PROGRAM } from "@/ui/business"
+import { ADDRESS, EMAIL, LEGAL_ENTITY, PHONE, SMS_PROGRAM } from "@/ui/business"
 
 export default function PrivacyPolicyPage() {
   return (
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
             <Box>
               <Typography variant="subtitle1" gutterBottom><b>1. Introduction</b></Typography>
               <Typography>
-                Beacon Auto Care ("we," "us," or "our"), operated by AUTOBO LLC, is committed to protecting
+                Beacon Auto Care ("we," "us," or "our"), operated by {LEGAL_ENTITY}, is committed to protecting
                 your privacy. This Privacy Policy explains how we collect, use, and safeguard information
                 when you visit our website at{" "}
                 <Link component={NextLink} href="/" sx={{ color: "primary.main" }}>

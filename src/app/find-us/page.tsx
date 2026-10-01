@@ -1,14 +1,15 @@
 import type { Metadata } from "next"
 import FindUsPage from "./FindUsPage"
+import { ADDRESS, BUSINESS_NAME, HOURS, PHONE } from "@/ui/business"
 
 export const metadata: Metadata = {
-  title: "Find Us — 8701 NW 13th Terrace, Doral, FL 33172",
-  description: "Visit Beacon Auto Care at 8701 NW 13th Terrace, Doral, FL 33172, next to Shell Gas Station. Open Mon–Fri 7:00 AM – 6:00 PM. Call (305) 471-8400. Get directions.",
-  keywords: ["Beacon Auto Care location", "auto shop Doral FL address", "8701 NW 13th Terrace Doral", "auto repair near me Doral", "directions auto shop Doral"],
+  title: `Find Us — ${ADDRESS.full}`,
+  description: `Visit ${BUSINESS_NAME} at ${ADDRESS.full}, next to Shell Gas Station. Open ${HOURS.display}. Call ${PHONE.display}. Get directions.`,
+  keywords: ["Beacon Auto Care location", "auto shop Doral FL address", `${ADDRESS.street} ${ADDRESS.locality}`, "auto repair near me Doral", "directions auto shop Doral"],
   alternates: { canonical: "/find-us" },
   openGraph: {
-    title: "Find Beacon Auto Care | 8701 NW 13th Terrace, Doral, FL",
-    description: "Visit us at 8701 NW 13th Terrace, Doral, FL 33172 (next to Shell). Open Mon–Fri 7am–6pm. Call (305) 471-8400.",
+    title: `Find ${BUSINESS_NAME} | ${ADDRESS.street}, ${ADDRESS.locality}, ${ADDRESS.region}`,
+    description: `Visit us at ${ADDRESS.full} (next to Shell). Open ${HOURS.short}. Call ${PHONE.display}.`,
     url: "/find-us",
   },
 }

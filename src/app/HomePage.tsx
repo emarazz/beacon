@@ -6,6 +6,7 @@ import Navbar from "@/ui/Navbar"
 import FeaturedServices from "@/ui/FeaturedServices"
 import FeatureHighlights from "@/ui/FeatureHighlights"
 import { Colors } from "@/ui/colors"
+import { MAPS, PHONE } from "@/ui/business"
 
 const certifications = [
   { src: "/img/certifications/napa-autocare-gold-certified.webp", alt: "NAPA AutoCare Gold Certified" },
@@ -17,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       <Box sx={visuallyHidden}>
-        <p>Beacon Auto Care is a NAPA AutoCare Center in Doral, FL. Expert car maintenance, tire services, brakes, AC & auto repair. Serving Doral, Miami & surrounding areas. Call (305) 471-8400.</p>
+        <p>Beacon Auto Care is a NAPA AutoCare Center in Doral, FL. Expert car maintenance, tire services, brakes, AC & auto repair. Serving Doral, Miami & surrounding areas. Call {PHONE.display}.</p>
       </Box>
 
       {/* ─── Hero ─────────────────────────────────────────────────── */}
@@ -172,7 +173,7 @@ export default function HomePage() {
 
             <Box
               component="iframe"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.5472540468363!2d-80.33973092361089!3d25.785513807619004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b913ec4adab7%3A0x9c249c985ea91a7e!2sBeacon%20Auto%20Care!5e0!3m2!1sen!2sbo!4v1772642008517!5m2!1sen!2sbo"
+              src={MAPS.embed}
               sx={{ border: 0, display: "block", width: "100%", flexGrow: 1, minHeight: 320 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

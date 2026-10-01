@@ -23,6 +23,7 @@ import {
 import Image from "next/image"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
+import { ADDRESS, HOURS, MAPS, PHONE } from "@/ui/business"
 
 type NavbarVariant = "dark" | "white"
 
@@ -91,7 +92,7 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: { xs: "flex-start", md: "center" }, gap: 1 }}>
               <AccessTimeIcon sx={{ color: iconColor }} />
               <Typography variant="body1" color={textColor}>
-                Mon – Fri: 7:00 AM – 6:00 PM
+                {HOURS.display}
               </Typography>
             </Box>
 
@@ -110,10 +111,10 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                     Call Us:{" "}
                     <Link
                       component={NextLink}
-                      href="tel:+13054718400"
+                      href={PHONE.href}
                       sx={{ color: textColor }}
                     >
-                      (305) 471-8400
+                      {PHONE.display}
                     </Link>
                   </Typography>
                 </Box>
@@ -123,13 +124,13 @@ export default function Navbar({ variant = "white" }: { variant?: NavbarVariant 
                   <Typography variant="body1" color={textColor}>Visit Us:</Typography>
                   <Link
                     component={NextLink}
-                    href="https://goo.gl/maps/6tNDNvLRrgVAR2z27"
+                    href={MAPS.link}
                     target="_blank"
                     rel="noopener"
                     sx={{ color: textColor }}
                   >
-                    <Typography variant="body1">8701 NW 13th Terrace</Typography>
-                    <Typography variant="body1">Doral, FL 33172</Typography>
+                    <Typography variant="body1">{ADDRESS.street}</Typography>
+                    <Typography variant="body1">{ADDRESS.city}</Typography>
                   </Link>
                 </Box>
               </Box>

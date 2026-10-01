@@ -4,6 +4,7 @@ import Navbar from "@/ui/Navbar"
 import ImageSlider from "@/ui/ImageSlider"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
+import { EMAIL, PHONE } from "@/ui/business"
 
 const fleetSlides = [
   { src: "/img/beacon-fleet-management-01.webp", alt: "Beacon Auto Care Fleet Management" },
@@ -105,9 +106,9 @@ export default function FleetPage() {
                   Minimize your vehicle downtime and streamline your corporate bookkeeping. Contact our
                   Fleet Service Desk today to register your vehicles in our system or to verify your
                   specific fleet network integration at{" "}
-                  <Link component={NextLink} href="tel:+13054718400">(305) 471-8400</Link>
+                  <Link component={NextLink} href={PHONE.href}>{PHONE.display}</Link>
                   {" "}or{" "}
-                  <Link component={NextLink} href="mailto:shop@beaconauto.net">shop@beaconauto.net</Link>.
+                  <Link component={NextLink} href={`mailto:${EMAIL}`}>{EMAIL}</Link>.
                 </Typography>
               </Box>
             </Box>

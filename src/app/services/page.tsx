@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import ServicesPage from "./ServicesPage"
+import { PHONE } from "@/ui/business"
 
 export const metadata: Metadata = {
   title: "Auto Repair & Maintenance Services — Doral, FL",
-  description: "Full-service auto repair in Doral, FL: oil changes, tire services, brake repair, AC service, engine diagnostics, electrical, suspension & more. NAPA AutoCare Center. (305) 471-8400.",
+  description: `Full-service auto repair in Doral, FL: oil changes, tire services, brake repair, AC service, engine diagnostics, electrical, suspension & more. NAPA AutoCare Center. ${PHONE.display}.`,
   keywords: ["oil change Doral FL", "tire service Doral", "brake repair Doral FL", "AC service Doral", "engine diagnostic Doral", "auto maintenance Doral", "NAPA parts Doral"],
   alternates: { canonical: "/services" },
   openGraph: {
