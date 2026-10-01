@@ -125,6 +125,13 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
+            <Link
+              component={NextLink}
+              href="/terms-and-conditions"
+              sx={{ color: Colors.white, typography: "body2", "&:hover": { color: Colors.yellow } }}
+            >
+              Terms and Conditions
+            </Link>
             <CookiePreferencesLink />
           </Box>
         </Box>

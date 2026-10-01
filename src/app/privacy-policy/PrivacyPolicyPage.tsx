@@ -3,6 +3,7 @@ import { visuallyHidden } from "@mui/utils"
 import Navbar from "@/ui/Navbar"
 import NextLink from "next/link"
 import { Colors } from "@/ui/colors"
+import { ADDRESS, EMAIL, PHONE, SMS_PROGRAM } from "@/ui/business"
 
 export default function PrivacyPolicyPage() {
   return (
@@ -32,7 +33,7 @@ export default function PrivacyPolicyPage() {
           </Box>
 
           <Typography variant="body2" color="text.secondary">
-            Last updated: March 2026
+            Last updated: October 2026
           </Typography>
 
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
@@ -105,8 +106,27 @@ export default function PrivacyPolicyPage() {
               </Typography>
             </Box>
 
+            <Box id="sms">
+              <Typography variant="subtitle1" gutterBottom><b>6. SMS Messaging</b></Typography>
+              <Typography>
+                If you opt in to the {SMS_PROGRAM.name}, we collect your mobile phone number and the
+                consent you provide in order to send you the messages described in our{" "}
+                <Link component={NextLink} href="/terms-and-conditions#sms">
+                  Terms and Conditions
+                </Link>
+                . Messages are sent through {SMS_PROGRAM.provider}, which processes this information on
+                our behalf solely to deliver those messages.
+              </Typography>
+              <Typography sx={{ mt: 1 }}>
+                No mobile information will be shared with third parties or affiliates for marketing or
+                promotional purposes. Text messaging originator opt-in data and consent will not be shared
+                with any third parties. You can opt out at any time by replying{" "}
+                <b>{SMS_PROGRAM.stopKeyword}</b>.
+              </Typography>
+            </Box>
+
             <Box>
-              <Typography variant="subtitle1" gutterBottom><b>6. Your Choices</b></Typography>
+              <Typography variant="subtitle1" gutterBottom><b>7. Your Choices</b></Typography>
               <Typography>
                 You may opt out of analytics tracking at any time by:
               </Typography>
@@ -122,7 +142,7 @@ export default function PrivacyPolicyPage() {
             </Box>
 
             <Box>
-              <Typography variant="subtitle1" gutterBottom><b>7. Florida Residents</b></Typography>
+              <Typography variant="subtitle1" gutterBottom><b>8. Florida Residents</b></Typography>
               <Typography>
                 Florida residents may have additional rights under the Florida Digital Bill of Rights
                 (FDBR), effective July 1, 2024. As a small business, we do not engage in the sale of
@@ -132,7 +152,7 @@ export default function PrivacyPolicyPage() {
             </Box>
 
             <Box>
-              <Typography variant="subtitle1" gutterBottom><b>8. Data Security</b></Typography>
+              <Typography variant="subtitle1" gutterBottom><b>9. Data Security</b></Typography>
               <Typography>
                 We do not store personal data on our servers. All analytics data is processed by Google
                 on our behalf. We take reasonable measures to ensure our website and communications
@@ -141,7 +161,7 @@ export default function PrivacyPolicyPage() {
             </Box>
 
             <Box>
-              <Typography variant="subtitle1" gutterBottom><b>9. Changes to This Policy</b></Typography>
+              <Typography variant="subtitle1" gutterBottom><b>10. Changes to This Policy</b></Typography>
               <Typography>
                 We may update this Privacy Policy from time to time. The "Last updated" date at the top
                 of this page will reflect any changes. We encourage you to review this page periodically.
@@ -149,18 +169,18 @@ export default function PrivacyPolicyPage() {
             </Box>
 
             <Box>
-              <Typography variant="subtitle1" gutterBottom><b>10. Contact Us</b></Typography>
+              <Typography variant="subtitle1" gutterBottom><b>11. Contact Us</b></Typography>
               <Typography>
                 If you have any questions about this Privacy Policy, please contact us:
               </Typography>
               <Box component="ul" sx={{ mt: 1, pl: 3 }}>
                 <li><Typography>Email:{" "}
-                  <Link href="mailto:shop@beaconauto.net">shop@beaconauto.net</Link>
+                  <Link href={`mailto:${EMAIL}`}>{EMAIL}</Link>
                 </Typography></li>
                 <li><Typography>Phone:{" "}
-                  <Link href="tel:+13054718400">(305) 471-8400</Link>
+                  <Link href={PHONE.href}>{PHONE.display}</Link>
                 </Typography></li>
-                <li><Typography>Address: 8701 NW 13th Terrace, Doral, FL 33172</Typography></li>
+                <li><Typography>Address: {ADDRESS.street}, {ADDRESS.city}</Typography></li>
               </Box>
             </Box>
 

@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next"
-
-const BASE = process.env.NEXT_PUBLIC_URL || "https://beaconauto.net"
+import { SITE_URL as BASE } from "@/ui/business"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -42,7 +41,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/privacy-policy`,
-      lastModified: new Date("2026-03-01"),
+      lastModified: new Date("2026-10-01"),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${BASE}/terms-and-conditions`,
+      lastModified: new Date("2026-10-01"),
       changeFrequency: "yearly",
       priority: 0.2,
     },
