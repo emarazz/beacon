@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for Beacon Auto Care. Learn how we collect and use anonymized analytics data on our website.",
   alternates: { canonical: "/privacy-policy" },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 }
 
 export default function Page() {
