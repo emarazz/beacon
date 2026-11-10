@@ -36,11 +36,11 @@ export const MAPS = {
 }
 
 export const HOURS = {
-  display: "Mon – Fri: 7:00 AM – 6:00 PM",
-  short: "Mon–Fri 7am–6pm",
+  display: "Mon – Fri: 7:00 AM – 5:00 PM",
+  short: "Mon–Fri 7am–5pm",
   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   opens: "07:00",
-  closes: "18:00",
+  closes: "17:00",
 }
 
 export const SMS_PROGRAM = {
